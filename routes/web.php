@@ -1,5 +1,8 @@
 <?php
 
+use CloudCreativity\LaravelJsonApi\Facades\JsonApi;
+use CloudCreativity\LaravelJsonApi\Routing\ApiGroup as Api;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +14,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+app("json-api")->register('v1', [], function (Api $api) {
+    $api->resource('comments');
+    $api->resource('people');
+    $api->resource('posts', ['has-one' => 'author', 'has-many' => ['comments', 'tags']]);
+    $api->resource('sites');
 });

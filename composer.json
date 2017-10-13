@@ -4,15 +4,24 @@
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
+
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/jelhan/laravel-json-api"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
         "laravel/lumen-framework": "5.5.*",
-        "vlucas/phpdotenv": "~2.2"
+        "vlucas/phpdotenv": "~2.2",
+        "cloudcreativity/laravel-json-api": "dev-lumen"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "~6.0",
-        "mockery/mockery": "~0.9"
+        "mockery/mockery": "~0.9",
+        "cloudcreativity/json-api-testing": "^0.2.0"
     },
     "autoload": {
         "psr-4": {
